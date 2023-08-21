@@ -4,12 +4,12 @@ const app = express();
 const mongoose = require("mongoose");
 const doctorRoute = require("./routes/doctorRoute");
 const cors = require('cors')
+app.use(cors());
 
 
 app.use(express.json());
 app.use("/users", userRoute);
 app.use("/doctor", doctorRoute);
-app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("mock-1 backend");
